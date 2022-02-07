@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <h1 style="margin-top: 20px;">
+                Application Status:{{appStatus | async}}
+            </h1>
+            <button style="margin-top: 20px;" class="btn btn-success" (click)="onAddServer()">
+                Add New Servers
+            </button><br>
+            <input  style="margin-top: 20px" type="text" [(ngModel)]="filterText">
+            
+            <ul class="list-group" style="margin-top: 20px">
+                <li class="list-group-item"
+                *ngFor="let server of servers | filter: filterText:'status'"
+                [ngClass]="getStatusClasses(server.status)">
+                    <span class="badge badge-danger">
+                        {{server.status |uppercase}}
+                    </span>
+                    -
+                    &nbsp;&nbsp;&nbsp;
+                    <strong>
+                        {{server.name | shorten: 12}}  
+                    </strong> 
+                    |  {{server.instanceType | uppercase}} 
+                    |  {{server.started | date :'long' | uppercase}}
+                    |  Cost:{{'9872.45' | currency:''}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

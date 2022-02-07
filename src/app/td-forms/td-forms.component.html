@@ -1,0 +1,33 @@
+<!-- <p>td-forms works!</p> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav ole="navigation">
+        <p>My name is SideNav!</p>
+    </mat-sidenav>
+        
+    <mat-sidenav-content>
+            <mat-toolbar color="accent">
+                <div>
+                    <button mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <a routerLink="">LOGO</a>
+                </div>
+                <div fxFlex fxLayout fxLayoutAlign="flex-end">
+                    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                        <li><a routerLink ="">SignUp</a></li>
+                        <li><a routerLink ="">Login</a></li>
+                        <li><a routerLink ="">Trainee</a></li>
+                        
+                    </ul>
+                </div>
+            </mat-toolbar>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+    </mat-sidenav-content>
+  
+</mat-sidenav-container>
+

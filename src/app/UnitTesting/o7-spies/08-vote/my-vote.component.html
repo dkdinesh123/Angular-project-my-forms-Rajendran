@@ -1,0 +1,26 @@
+
+<h1 style='background-color: yellow; font-size: large; font-weight: bold;'>Welcome To my Page:</h1>
+<div class="row" style="background-color: powderblue;">
+    <div class="col-12" style="background-color:yellowgreen;">
+        <div class="voter">
+
+            
+                <h4>My Voting Poll</h4>
+                <hr>
+            <button (click)="upVote()" class="btn btn-outline-primary"
+                [ngClass]="{highlighted:myVote === 1}">
+                    CLICK ME TO UPVOTE
+            </button>
+                <hr>
+            <p  class="vote-count">
+                    <strong>{{totalVotes}}</strong>
+            </p>
+            
+            <button (click)="downVote()" class="btn btn-outline-danger"
+                [ngClass]="{highlighted:myVote === -1}">
+                    CLICK ME TO DOWNVOTE
+            </button>
+   
+          </div>
+    </div>
+</div>

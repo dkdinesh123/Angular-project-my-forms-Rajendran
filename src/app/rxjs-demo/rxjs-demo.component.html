@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <a routerLink="home" >Home</a> | &nbsp;
+        <a [routerLink]="['user',1]" >User Name is : 1</a> |&nbsp;&nbsp;
+        <a [routerLink]="['user',2]" >User Name is : 2</a>
+
+
+    </div>
+</div>
+<hr>
+<div  *ngIf="userActivated" class="row">
+    <div class="col-12">
+        <h2>User has been Successfully Activated.</h2>
+    </div>
+</div>
+<!-- <div  *ngIf="userDeActivated" class="row">
+    <div class="col-12">
+        <h2>User has been Successfully DeActivated.</h2>
+    </div>
+</div> -->
+<hr>
+<div class="row">
+    <div class="col-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>

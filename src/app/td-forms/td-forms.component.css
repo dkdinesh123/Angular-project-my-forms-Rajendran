@@ -1,0 +1,24 @@
+.navigation-items
+{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+
+a
+{
+    text-decoration: none;
+    color:white;
+}
+a:hover, a:active 
+{
+    color:black;
+}
+mat-sidenav-container,mat-sidenav,mat-sidenav-content
+{
+height: 100%;
+}
+mat-sidenav
+{
+    width: 250px;
+}

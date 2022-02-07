@@ -1,0 +1,18 @@
+input.ng-invalid.ng-touched
+{
+border: 3px double orangered;
+}
+h3
+{
+    color: blue;
+    font-size: x-large;
+    font-weight: 800;
+    font-style: italic;
+    background-color: yellowgreen;
+    text-align: center;
+}
+label
+{
+    color: blue;
+    font-weight: 600;
+}

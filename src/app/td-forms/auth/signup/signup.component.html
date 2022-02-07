@@ -1,0 +1,80 @@
+<p >ACCOUNT CREATION:</p>
+
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center"
+    #mydata="ngForm" 
+    (ngSubmit)="onSubmit(mydata)">
+        <mat-form-field>
+
+            <!-- Emailid -->
+
+            <input type="email" matInput placeholder="Enter your Mail-Id"
+            ngModel
+            name="emailid"
+            required email
+            #emailid="ngModel">
+            
+            <mat-error *ngIf="emailid.hasError('required')">Field Should not be Empty</mat-error>
+            
+            <mat-error *ngIf="emailid.hasError('email')">Invalid Emailid</mat-error>
+           
+        </mat-form-field>
+       
+<!-- Password -->
+
+        <mat-form-field hintLabel="Should Enter more than 8 or 8 characters">
+            
+            <input type="password" matInput placeholder="Enter your password"
+            ngModel name= PASSWORD
+            required
+            minlength="8"
+            #passwdip="ngModel">
+           
+            <mat-hint align = "end" >{{passwdip.value?.length}} / 8 </mat-hint>
+           
+            <mat-error>Enter atleast 8 characters</mat-error>
+        
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input type="text" placeholder="Date-Of-Birth" matInput [matDatepicker]="picker"
+            ngModel name="dateOfBirth"
+            required> 
+            <!-- <input type="text" matInput (reference) picker:MatDatepicker<any>
+                [matDatepicker]="picker"
+            ngModel name="dateOfBirth"
+            required>  -->
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            
+            <mat-datepicker #picker>
+            </mat-datepicker>
+        </mat-form-field>
+        
+<mat-checkbox ngModel name="iAgree" required>
+    I acknowledged the above Terms & Conditions.
+</mat-checkbox>
+
+        <button type="submit" [disabled]="mydata.invalid" mat-raised-button color="accent">
+            Click Me
+        </button>
+    </form>
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3>FLEX LAYOUT DEMO:</h3>
+<section id="container">
+    <div id="child1" class="child">CHILD 1</div>
+    <div id="child2" class="child">CHILD 2</div>
+    <div id="child3" class="child">CHILD 3</div>
+</section> -->

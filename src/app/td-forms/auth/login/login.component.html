@@ -1,0 +1,42 @@
+<!-- <h3 style="text-align: center; background-color:grey; font-size: large;">
+    Welcome to My Login Forms
+</h3> -->
+
+<section>
+    <form [formGroup]="loginForm"
+        fxLayout="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="20px"
+        (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input type="email"
+            matInput
+            placeholder="Your Email Id"
+            formControlName="userEmail">
+            <mat-hint>
+               Please Enter Valid Email!.
+            </mat-hint>
+          <mat-error>
+            Invalid or Missing Email
+          </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" 
+            matInput
+            placeholder="Your Password"
+            formControlName="userPwd">
+            <mat-hint>
+                Please Enter Your password!
+            </mat-hint>
+            <mat-error>
+                Missing Password!
+            </mat-error>
+    </mat-form-field>
+    <button type="submit"
+    mat-raised-button
+    color="accent"
+    [disabled]="loginForm.invalid">
+    Click Me to Submit
+</button>
+    </form>
+</section>
